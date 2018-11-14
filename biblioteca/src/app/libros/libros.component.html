@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">
+      Libros
+    </h2>
+    <div class="card-text">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Autor</th>
+              <th>Copias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let libro of libros" (click)="onSelect(libro);">
+              <td>{{libro.titulo}}</td>
+              <td>{{libro.autor}}</td>
+              <td>{{libro.copias}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div *ngIf="libroSeleccionado">
+  <app-detalle-libro [libro]="libroSeleccionado"></app-detalle-libro>
+</div>

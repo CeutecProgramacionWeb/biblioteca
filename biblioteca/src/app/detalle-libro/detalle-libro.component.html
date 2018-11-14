@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-text">
+      {{libro.titulo}}
+    </h2>
+    <div class="card-text">
+      <div class="form-group">
+        Autor:
+        <input type="text" class="form-control" name="autor" [(ngModel)]="libro.autor">
+      </div>
+      <div class="form-group">
+        Copias disponibles:
+        <input type="number" class="form-control" name="copias" [(ngModel)]="libro.copias">
+      </div>
+      <div class="form-group">
+        Categoria:
+        <input type="text" class="form-control" name="categoria" [(ngModel)]="libro.categoria">
+      </div>
+      <button class="btn btn-primary" *ngIf = "libro.copias > 0" (click) = "restarCopias();"> Prestar Libro </button>
+      <button class="btn btn-danger ml-3" *ngIf = "libro.max > libro.copias  " (click) = "sumarCopias();"> Devolver Libro </button>
+    </div>
+  </div>
+</div>
